@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Download Videos</h1>
+        <form method="POST" action="/">
+            <label for="url">Video URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter video URL" required>
+            <button type="submit">Download</button>
+        </form>
+        
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        <h3>Supported Platforms:</h3>
+        <div class="logos">
+            <img src="{{ url_for('static', filename='images/youtube.png') }}" alt="YouTube" width="50">
+            <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram" width="50">
+            <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook" width="50">
+        </div>
+
+        <!-- مربع النص -->
+        <div class="footer">
+            <p>Dev By <strong>GHalwash</strong></p>
+            <a href="https://mrfa0gh.line.pm/" target="_blank">My website</a>
+        </div>
+    </div>
+</body>
+</html>
